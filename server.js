@@ -25,7 +25,7 @@ const paymentRoutes = require("./src/routes/paymentproof.routes");
 
 // connect to database
 // const MONGODB_URI= "mongodb+srv://<db_username>:<db_password>@alistiqama.iupxq.mongodb.net/?retryWrites=true&w=majority&appName=alIstiqama"
-PORT=5000
+const PORT=5000
 const MONGODB_URI = "mongodb+srv://abdulbasid:abdul123@alistiqama.iupxq.mongodb.net/forestryDb?retryWrites=true&w=majority&appName=alIstiqama"
 
 
