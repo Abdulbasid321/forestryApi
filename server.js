@@ -24,7 +24,12 @@ const paymentRoutes = require("./src/routes/paymentproof.routes");
 
 
 // connect to database
-const MONGODB_URI= "mongodb+srv://abdulbasidhussain:abdul123@cluster0.yflxqwa.mongodb.net/forestry?retryWrites=true&w=majority&appName=Cluster0"
+// const MONGODB_URI= "mongodb+srv://<db_username>:<db_password>@alistiqama.iupxq.mongodb.net/?retryWrites=true&w=majority&appName=alIstiqama"
+PORT=5000
+const MONGODB_URI = "mongodb+srv://abdulbasid:abdul123@alistiqama.iupxq.mongodb.net/forestryDb?retryWrites=true&w=majority&appName=alIstiqama"
+
+
+// const MONGODB_URI= "mongodb+srv://abdulbasidhussain:abdul123@cluster0.yflxqwa.mongodb.net/forestry?retryWrites=true&w=majority&appName=Cluster0"
 // const MONGODB_URI = 'mongodb://127.0.0.1:27017/zibeh';
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
@@ -41,7 +46,8 @@ const server = http.createServer(app);
 // Create socket.io server and attach it to the HTTP server
 const io = new Server(server, {
   cors: {
-    origin: ['http://localhost:3000', 'http://localhost:3001'],
+    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://forestryapi.onrender.com'
+],
     methods: ['GET', 'POST'],
     credentials: true,
   },
