@@ -44,14 +44,24 @@ const app = express();
 const server = http.createServer(app);
 
 // Create socket.io server and attach it to the HTTP server
-const io = new Server(server, {
-  cors: {
-    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://forestryapi.onrender.com', 'https://forestry-api-zfs7.vercel.app'
-],
-    methods: ['GET', 'POST'],
-    credentials: true,
-  },
-});
+// const io = new Server(server, {
+//   cors: {
+//     origin: ['http://localhost:3000', 'http://localhost:3001', 'https://forestryapi.onrender.com', 'https://forestry-api-zfs7.vercel.app'
+// ],
+//     methods: ['GET', 'POST'],
+//     credentials: true,
+//   },
+// });
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://forestryapi.onrender.com',
+    'https://forestry-api-zfs7.vercel.app'
+  ],
+  methods: ['GET', 'POST'],
+  credentials: true,
+}));
 
 // Socket.io events
 io.on('connection', (socket) => {
