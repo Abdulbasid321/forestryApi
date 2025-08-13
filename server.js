@@ -64,29 +64,29 @@ app.use(cors({
 }));
 
 // Socket.io events
-io.on('connection', (socket) => {
-  console.log('New client connected:', socket.id);
+// io.on('connection', (socket) => {
+//   console.log('New client connected:', socket.id);
 
-  socket.on('joinRoom', ({ studentName }) => {
-    console.log(`${studentName} joined the chat`);
-    // optionally join room(s)
-    // socket.join('someRoom');
-  });
+//   socket.on('joinRoom', ({ studentName }) => {
+//     console.log(`${studentName} joined the chat`);
+//     // optionally join room(s)
+//     // socket.join('someRoom');
+//   });
 
-  socket.on('chatMessage', ({ senderName, message }) => {
-    const msgObj = {
-      senderName,
-      message,
-      timestamp: new Date(),
-    };
-    // Broadcast to all clients
-    io.emit('newMessage', msgObj);
-  });
+//   socket.on('chatMessage', ({ senderName, message }) => {
+//     const msgObj = {
+//       senderName,
+//       message,
+//       timestamp: new Date(),
+//     };
+//     // Broadcast to all clients
+//     io.emit('newMessage', msgObj);
+//   });
 
-  socket.on('disconnect', () => {
-    console.log('Client disconnected:', socket.id);
-  });
-});
+//   socket.on('disconnect', () => {
+//     console.log('Client disconnected:', socket.id);
+//   });
+// });
 
 // middleware
 app.use(express.json({ limit: '50mb' }));
