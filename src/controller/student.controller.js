@@ -44,7 +44,7 @@ exports.createStudent = async (req, res) => {
     }
 
     // Generate regNumber (e.g., ENGAUSA001, ENGAUSA002, ...)
-    const prefix = "ZIT"; // ✅ Customize this if needed
+    const prefix = "CFJ/ND/COM"; // ✅ Customize this if needed
 
     const lastStudent = await Student.findOne({ regNumber: { $regex: `^${prefix}` } })
                                      .sort({ createdAt: -1 });
