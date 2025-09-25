@@ -68,8 +68,8 @@ exports.createStudent = async (req, res) => {
       phone,
       address,
       regNumber, // ✅ Save generated regNumber
-      semester: '1st',
-      currentLevel: '100',
+      semester: 'First Semester',
+      currentLevel: 'ND1',
       completedLevels: []
     });
 
